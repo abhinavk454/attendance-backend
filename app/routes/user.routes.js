@@ -5,7 +5,10 @@ import {
   getUserById,
   deleteUserById,
 } from "../controllers/user.controller.js";
-import { ensureAuthenticated } from "../middlewares/auth.middleware.js";
+import {
+  ensureAuthenticated,
+  authenticateToken,
+} from "../middlewares/auth.middleware.js";
 
 const userRouter = Router();
 
@@ -14,7 +17,7 @@ userRouter.get("/", (req, res) => {
 });
 
 userRouter.post("/create", createUser);
-userRouter.get("/get", [ensureAuthenticated], getUser);
+userRouter.get("/get", [authenticateToken], getUser);
 userRouter.get("/get/:id", getUserById);
 userRouter.delete("/delete/:id", deleteUserById);
 
