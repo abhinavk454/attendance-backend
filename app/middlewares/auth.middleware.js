@@ -19,6 +19,7 @@ export const loginMiddleware = (req, res, next) => {
     const token = JWT.sign(payload, secretKey);
 
     res.locals.token = token;
+    res.locals.id = user.id;
     next();
   })(req, res);
 };

@@ -18,7 +18,7 @@ userRouter.get("/", (req, res) => {
 
 userRouter.post("/create", createUser);
 userRouter.get("/get", [authenticateToken], getUser);
-userRouter.get("/get/:id", getUserById);
-userRouter.delete("/delete/:id", deleteUserById);
+userRouter.get("/get/:id", [authenticateToken], getUserById);
+userRouter.delete("/delete/:id", [authenticateToken], deleteUserById);
 
 export default userRouter;
