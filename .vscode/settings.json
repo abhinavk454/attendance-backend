@@ -1,0 +1,4 @@
+{
+  "ansible.python.interpreterPath": "d:\\Apps\\Scoop\\apps\\python\\current\\python.exe",
+  "ansible.validation.lint.enabled": false
+}
