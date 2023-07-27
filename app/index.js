@@ -48,9 +48,9 @@ app.use("*", (req, res) => {
   res.status(404).json({ message: "Not Found" });
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(
-    chalk.blue.bold(`⚡️[Development]: Server is running at `) +
-      chalk.red.bold(`http://localhost:${port}🔥`)
+    chalk.blue.bold(`⚡️[Prod]: Server is running at `) +
+      chalk.red.bold(`http://0.0.0.0:${port}🔥`)
   );
 });
